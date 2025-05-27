@@ -15,9 +15,10 @@ module.exports = {
     favicon: 'img/favicon.ico',
     organizationName: 'ChargePi',
     projectName: 'ChargePi',
+    i18n: {defaultLocale: 'en', locales: ['en']},
     themeConfig: {
         navbar: {
-            title: ' ',
+            title: '',
             logo: {
                 alt: 'ChargePi Logo',
                 src: 'img/Logo.svg'
@@ -25,23 +26,14 @@ module.exports = {
             items: [
                 {
                     type: 'dropdown',
-                    label: 'Documentation',
+                    label: 'Docs',
                     position: 'left',
                     items: [
                         {
                             type: 'doc',
-                            docId: 'intro',
-                            label: 'Client',
-                        }, {
-                            type: 'doc',
-                            docId: 'hardware',
-                            label: 'Hardware',
-                            docsPluginId: 'docs-hardware',
-                        }, {
-                            type: 'doc',
-                            docId: 'modem-setup',
-                            label: 'Services',
-                            docsPluginId: 'docs-services',
+                            docId: 'running-the-client',
+                            label: 'ChargePi',
+                            docsPluginId: 'docs-chargepi',
                         },
                     ],
                 },
@@ -51,41 +43,23 @@ module.exports = {
                     label: 'GitHub',
                     position: 'right'
                 }
+
             ]
         },
         footer: {
-            //style: 'dark',
+            // style: 'dark',
             links: [
                 {
                     title: 'Documentation',
                     items: [
                         {
-                            label: 'Client',
-                            to: '/docs/intro'
-                        }, {
-                            label: 'Hardware',
-                            to: '/hardware/hardware'
-                        }, {
-                            label: 'Services',
-                            to: '/services/modem-setup'
-                        }
-                    ]
-                },
-                {
-                    title: 'Social',
-                    items: [
-                        {
-                            label: 'Stack Overflow',
-                            href: 'https://stackoverflow.com/questions/tagged/chargepi'
+                            label: 'ChargePi',
+                            to: '/docs/chargepi'
                         },
-                        {
-                            label: 'Discord',
-                            href: 'https://discordapp.com/invite/chargepi'
-                        }
                     ]
                 },
                 {
-                    title: 'More',
+                    title: 'Legal',
                     items: [
                         {
                             label: 'Blog',
@@ -100,45 +74,75 @@ module.exports = {
             ],
             copyright: `Copyright © 2022-${new Date().getFullYear()} ChargePi.`
         },
+        docs: {sidebar: {autoCollapseCategories: true, hideable: true}},
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
             additionalLanguages: ['go', 'python', 'bash', 'docker', 'diff', 'json'],
-        }
+        },
+        customCss: require.resolve('./src/style/globals.css'),
+        languageTabs: [
+            {highlight: 'python', language: 'python', logoClass: 'python'},
+            {highlight: 'bash', language: 'curl', logoClass: 'curl'},
+            {highlight: 'csharp', language: 'csharp', logoClass: 'csharp'},
+            {highlight: 'go', language: 'go', logoClass: 'go'},
+            {highlight: 'javascript', language: 'nodejs', logoClass: 'nodejs'},
+            {highlight: 'java', language: 'java', logoClass: 'java', variant: 'unirest'},
+            {highlight: 'dart', language: 'dart', logoClass: 'dart'},
+            {highlight: 'javascript', language: 'javascript', logoClass: 'javascript'},
+            {highlight: 'c', language: 'c', logoClass: 'c'},
+            {highlight: 'objective-c', language: 'objective-c', logoClass: 'objective-c'},
+            {highlight: 'swift', language: 'swift', logoClass: 'swift'},
+            {highlight: 'kotlin', language: 'kotlin', logoClass: 'kotlin'},
+            {highlight: 'rust', language: 'rust', logoClass: 'rust'}
+        ]
     },
     presets: [
         [
             '@docusaurus/preset-classic',
             {
                 docs: {
+                    path: 'docs',
                     sidebarPath: require.resolve('./sidebars.js'),
                     editUrl: 'https://github.com/ChargePi/ChargePi-docs/edit/master/'
                 },
                 blog: {
                     showReadingTime: true,
-                    editUrl:
-                        'https://github.com/ChargePi/ChargePi-docs/edit/master/'
+                    editUrl: 'https://github.com/ChargePi/ChargePi-docs/edit/master/'
                 },
                 theme: {
-                    customCss: require.resolve('./src/css/custom.css')
+                    customCss: require.resolve('./src/style/globals.css')
                 }
             }
         ]
-    ], plugins: [
+    ],
+    themes: [
+        [
+            require.resolve('@easyops-cn/docusaurus-search-local'),
+            {
+                indexPages: true,
+                docsRouteBasePath: '/docs',
+                hashed: true,
+                language: ['en'],
+                highlightSearchTermsOnTargetPage: false,
+                searchResultContextMaxLength: 50,
+                searchResultLimits: 8,
+                searchBarShortcut: true,
+                searchBarShortcutHint: true
+            }
+        ],
+        // 'docusaurus-theme-openapi-docs'
+    ],
+    plugins: [
+        ['./src/plugins/tailwind-config.js', {}],
         [
             '@docusaurus/plugin-content-docs',
             {
-                id: 'docs-hardware',
-                path: 'docs-hardware',
-                routeBasePath: 'hardware',
+                id: 'docs-chargepi',
+                path: 'chargepi/',
+                routeBasePath: '/docs/chargepi',
+                sidebarPath: './sidebars.js',
             },
-        ], [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'docs-services',
-                path: 'docs-services',
-                routeBasePath: 'services',
-            }
-        ]
+        ],
     ]
 };

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
-# ➡️Adding hardware support
+# Adding hardware support
 
 There are four hardware component groups that are included in the project:
 
