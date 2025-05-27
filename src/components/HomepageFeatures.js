@@ -4,24 +4,23 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
     {
-        title: 'Hardware',
+        title: 'Hardware-agnostic',
         Svg: require('../../static/img/rpi-3.svg').default,
         description: (
             <>
-                ChargePi runs on any Linux based machine and supports both off-the-shelf and commercial hardware.
-                It has support for a RFID/NFC reader, a status indicator, a display, an EVCC controller(s) and a energy meter.
-                The hardware components can be easily configured.
+                Runs on any Linux based machine. Supports both off-the-shelf and commercial hardware which can easily be
+                configured to your specific use case.
             </>
         ),
     },
     {
-        title: 'Functionality',
+        title: 'Cutting edge technology',
         Svg: require('../../static/img/ocpp.svg').default,
         description: (
             <>
-                ChargePi is written in Go and uses OCPP 1.6 for communication with the Charge point management system.
-                It implements core functionalities and reservation profile of the OCPP. It is configurable to work with
-                most hardware.
+                Written in Go, designed to be efficient and reliable. Supports both OCPP 1.6 JSON/WS and 2.0.1
+                protocols. Comes with a beautiful admin interface written in Svelte. Also comes with gRPC APIs so you
+                can implement your own applications!
             </>
         ),
     },
@@ -30,19 +29,8 @@ const FeatureList = [
         Svg: require('../../static/img/opensource.svg').default,
         description: (
             <>
-                ChargePi is open-source and uses open-source software. You can implement communication with your
-                hardware of choice without hassle.
-            </>
-        ),
-    }, {
-        title: 'Developer friendly',
-        Svg: require('../../static/img/golang.svg').default,
-        description: (
-            <>
-                Check out the docs! They are well written and regularly maintained.
-                ChargePi also provides remote and local log output options with context.
-                It is easy to configure, debug, develop and deploy the project. You're welcome to submit
-                any contributions to GitHub.
+                Best part? It's open source! Modify it, extend it, or use it as a base for your own projects or tailor
+                it to your specific needs.
             </>
         ),
     },

@@ -14,23 +14,6 @@ function HomepageHeader() {
             <div className="container">
                 <Logo className={styles.mainImg} alt={siteConfig.title}/>
                 <p className="hero__subtitle">{siteConfig.tagline}</p>
-                <div className={styles.buttonsIndex}>
-                    <div className={styles.buttons}>
-                        <Link
-                            className="button button--secondary button--lg"
-                            to="/docs/intro">
-                            Docs
-                        </Link>
-                    </div>
-                    <div className={styles.buttons}>
-                        <br/>
-                        <Link
-                            className="button button--secondary button--lg"
-                            href="https://github.com/xBlaz3kx?tab=repositories&q=ChargePi">
-                            GitHub
-                        </Link>
-                    </div>
-                </div>
             </div>
         </header>
     );
