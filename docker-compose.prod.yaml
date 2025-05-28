@@ -5,8 +5,4 @@ services:
     restart: on-failure
     build:
       context: .
-      target: dev
-    volumes:
-      - .:/opt/docusaurus
-    ports:
-      - "3000:3000"
+      target: serve
