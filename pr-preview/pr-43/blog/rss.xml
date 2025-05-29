@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>ChargePi Blog</title>
+        <link>https://chargepi.cc/blog</link>
+        <description>ChargePi Blog</description>
+        <lastBuildDate>Thu, 12 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Welcome]]></title>
+            <link>https://chargepi.cc/blog/welcome</link>
+            <guid>https://chargepi.cc/blog/welcome</guid>
+            <pubDate>Thu, 12 Aug 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Welcome to ChargePi website!]]></description>
+            <content:encoded><![CDATA[<p>Welcome to ChargePi website!</p>
+<p>Thank you for checking out the project. The project is still <strong>under development</strong>, but you're welcome to contribute to
+it!</p>
+<p>The main goal of the project is to create a simple, open source Charging Station for home use. We want the project to be
+modular and configurable, so everyone can modify it to their needs!</p>
+<p>The support for hardware is limited, but you can change that! Integrate some new hardware to the program.</p>]]></content:encoded>
+            <category>charge-pi</category>
+            <category>hello</category>
+        </item>
+    </channel>
+</rss>
