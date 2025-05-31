@@ -2,12 +2,13 @@ const {themes} = require('prism-react-renderer');
 const darkCodeTheme = themes.github;
 const lightCodeTheme = themes.dracula;
 
+require('dotenv').config();
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
     title: 'ChargePi',
     tagline: 'A configurable, modular, open source charge point',
-    url: 'https://chargepi.cc',
+    url: process.env.DOCUSAURUS_BASE_URL || 'http://localhost:3000',
     baseUrl: '/',
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
@@ -46,7 +47,7 @@ module.exports = {
                 },
                 {to: '/blog', label: 'Blog', position: 'left'},
                 {
-                    href: 'https://github.com/ChargePi?tab=repositories&q=ChargePi-go',
+                    href: 'https://github.com/ChargePi',
                     label: 'GitHub',
                     position: 'right'
                 }
@@ -92,7 +93,7 @@ module.exports = {
                         },
                         {
                             label: 'GitHub',
-                            href: 'https://github.com/ChargePi?tab=repositories&q=ChargePi-go'
+                            href: 'https://github.com/ChargePi'
                         }
                     ]
                 }

@@ -5,6 +5,7 @@ on:
     branches:
       - master
   pull_request:
+    types: [ opened, synchronize, reopened ]
     branches:
       - master
 
@@ -16,6 +17,9 @@ jobs:
       contents: read # to download the repository
       pages: write # to upload the build artifact
       id-token: write # to verify the deployment originates from an appropriate source
+    env:
+      DOCUSAURUS_BASE_URL: https://chargepi.cc/
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,6 +36,7 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install # --frozen-lockfile
+
       - name: Build website
         run: pnpm build
 
@@ -60,3 +65,41 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-preview:
+    runs-on: ubuntu-latest
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      pull-requests: write
+      contents: write
+      id-token: write
+
+    env:
+      DOCASAURUS_BASE_URL: https://chargepi.cc/pr-preview-action/pr-${{github.event.pull_request.number}}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+          # cache: yarn
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.11.0
+
+      - name: Install and Build
+        if: github.event_name == 'pull_request' # Only preview on PR
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build/
+          action: 'auto'
+          pages-base-url: chargepi.cc
