@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://chargepi.cc/blog</id>
+    <id>http://localhost:3000/blog</id>
     <title>ChargePi Blog</title>
     <updated>2021-08-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://chargepi.cc/blog"/>
+    <link rel="alternate" href="http://localhost:3000/blog"/>
     <subtitle>ChargePi Blog</subtitle>
-    <icon>https://chargepi.cc/img/favicon.ico</icon>
+    <icon>http://localhost:3000/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
-        <id>https://chargepi.cc/blog/welcome</id>
-        <link href="https://chargepi.cc/blog/welcome"/>
+        <id>http://localhost:3000/blog/welcome</id>
+        <link href="http://localhost:3000/blog/welcome"/>
         <updated>2021-08-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to ChargePi website!]]></summary>
         <content type="html"><![CDATA[<p>Welcome to ChargePi website!</p>

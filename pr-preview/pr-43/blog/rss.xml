@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>ChargePi Blog</title>
-        <link>https://chargepi.cc/blog</link>
+        <link>http://localhost:3000/blog</link>
         <description>ChargePi Blog</description>
         <lastBuildDate>Thu, 12 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://chargepi.cc/blog/welcome</link>
-            <guid>https://chargepi.cc/blog/welcome</guid>
+            <link>http://localhost:3000/blog/welcome</link>
+            <guid>http://localhost:3000/blog/welcome</guid>
             <pubDate>Thu, 12 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to ChargePi website!]]></description>
             <content:encoded><![CDATA[<p>Welcome to ChargePi website!</p>
