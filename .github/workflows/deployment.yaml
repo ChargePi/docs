@@ -69,6 +69,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
   deploy-preview:
+    name: "Deploy Preview for PR #${{github.event.pull_request.number}}"
     if: github.event_name == 'pull_request' # Only run for pull requests
     runs-on: ubuntu-latest
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
