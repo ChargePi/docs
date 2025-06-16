@@ -32,16 +32,24 @@ module.exports = {
                             type: 'doc',
                             docId: 'intro',
                             label: 'Client',
-                        }, {
+                        },
+                        {
                             type: 'doc',
                             docId: 'hardware',
                             label: 'Hardware',
                             docsPluginId: 'docs-hardware',
-                        }, {
+                        },
+                        {
                             type: 'doc',
                             docId: 'modem-setup',
                             label: 'Services',
                             docsPluginId: 'docs-services',
+                        },
+                        {
+                            type: 'doc',
+                            docId: 'intro',
+                            label: 'ChargeFlow CLI',
+                            docsPluginId: 'chargeflow-docs',
                         },
                     ],
                 },
@@ -62,12 +70,18 @@ module.exports = {
                         {
                             label: 'Client',
                             to: '/docs/intro'
-                        }, {
+                        },
+                        {
                             label: 'Hardware',
                             to: '/hardware/hardware'
-                        }, {
+                        },
+                        {
                             label: 'Services',
                             to: '/services/modem-setup'
+                        },
+                        {
+                            label: 'Chargeflow CLI',
+                            to: '/chargeflow/intro'
                         }
                     ]
                 },
@@ -132,12 +146,21 @@ module.exports = {
                 path: 'docs-hardware',
                 routeBasePath: 'hardware',
             },
-        ], [
+        ],
+        [
             '@docusaurus/plugin-content-docs',
             {
                 id: 'docs-services',
                 path: 'docs-services',
                 routeBasePath: 'services',
+            }
+        ],
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'chargeflow-docs',
+                path: 'chargeflow',
+                routeBasePath: 'chargeflow',
             }
         ]
     ]
