@@ -56,8 +56,9 @@ module.exports = {
                 {to: '/blog', label: 'Blog', position: 'left'},
                 {
                     href: 'https://github.com/ChargePi',
-                    label: 'GitHub',
-                    position: 'right'
+                    position: 'right',
+                    className: 'navbar__github',
+                    'aria-label': 'GitHub'
                 }
             ]
         },
@@ -86,19 +87,6 @@ module.exports = {
                     ]
                 },
                 {
-                    title: 'Social',
-                    items: [
-                        {
-                            label: 'Stack Overflow',
-                            href: 'https://stackoverflow.com/questions/tagged/chargepi'
-                        },
-                        {
-                            label: 'Discord',
-                            href: 'https://discordapp.com/invite/chargepi'
-                        }
-                    ]
-                },
-                {
                     title: 'More',
                     items: [
                         {
@@ -106,8 +94,10 @@ module.exports = {
                             to: '/blog'
                         },
                         {
-                            label: 'GitHub',
-                            href: 'https://github.com/ChargePi'
+                            label: ' ',
+                            href: 'https://github.com/ChargePi',
+                            className: 'footer__github',
+                            'aria-label': 'GitHub'
                         }
                     ]
                 }
@@ -161,6 +151,20 @@ module.exports = {
                 id: 'chargeflow-docs',
                 path: 'chargeflow',
                 routeBasePath: 'chargeflow',
+            }
+        ],
+        [
+            'docusaurus-lunr-search',
+            {
+                indexBaseUrl: true,
+                indexDocPages: true,
+                indexBlog: true,
+                docsRouteBasePath: ['docs', 'hardware', 'services', 'chargeflow'],
+                searchBarPosition: 'right',
+                searchBarComponent: 'SearchBar',
+                searchBarComponentProps: {
+                    placeholder: 'Search documentation...',
+                },
             }
         ]
     ]

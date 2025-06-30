@@ -7,24 +7,356 @@
 
 /* You can override the default Infima variables here. */
 :root {
-    --ifm-color-primary: #e92b2b;
-    --ifm-color-primary-dark: #ae0001;
-    --ifm-color-primary-darker: rgb(157, 9, 9);
-    --ifm-color-primary-darkest: rgb(128, 17, 17);
-    --ifm-color-primary-light: #ff6655;
-    --ifm-color-primary-lighter: rgb(255, 101, 101);
-    --ifm-color-primary-lightest: rgb(247, 112, 112);
+    --ifm-color-primary: #ff6b35;
+    --ifm-color-primary-dark: #e55a2b;
+    --ifm-color-primary-darker: #d85426;
+    --ifm-color-primary-darkest: #b3451f;
+    --ifm-color-primary-light: #ff7d4d;
+    --ifm-color-primary-lighter: #ff8560;
+    --ifm-color-primary-lightest: #ffa380;
     --ifm-code-font-size: 95%;
-    --ifm-footer-background-color: #242526;
+    --ifm-footer-background-color: #1a1a1a;
+    --ifm-footer-color: #ffffff;
+    --ifm-footer-link-color: #ff6b35;
+    --ifm-footer-link-hover-color: #ff7d4d;
+    --ifm-background-color: #ffffff;
+    --ifm-background-surface-color: #f8f9fa;
+    --ifm-navbar-background-color: #ffffff;
+    --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme='dark'] {
+    --ifm-color-primary: #ff6b35;
+    --ifm-color-primary-dark: #e55a2b;
+    --ifm-color-primary-darker: #d85426;
+    --ifm-color-primary-darkest: #b3451f;
+    --ifm-color-primary-light: #ff7d4d;
+    --ifm-color-primary-lighter: #ff8560;
+    --ifm-color-primary-lightest: #ffa380;
+    --ifm-background-color: #0a0a0a;
+    --ifm-background-surface-color: #1a1a1a;
+    --ifm-navbar-background-color: #0a0a0a;
+    --ifm-footer-background-color: #000000;
+    --ifm-footer-color: #ffffff;
+    --ifm-footer-link-color: #ff6b35;
+    --ifm-footer-link-hover-color: #ff7d4d;
 }
 
 .docusaurus-highlight-code-line {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 107, 53, 0.1);
     display: block;
     margin: 0 calc(-1 * var(--ifm-pre-padding));
     padding: 0 var(--ifm-pre-padding);
 }
 
 html[data-theme='dark'] .docusaurus-highlight-code-line {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 107, 53, 0.2);
+}
+
+/* Footer improvements */
+.footer {
+    background-color: var(--ifm-footer-background-color);
+    color: var(--ifm-footer-color);
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.footer__links {
+    margin-bottom: 1rem;
+}
+
+.footer__link-item {
+    color: var(--ifm-footer-link-color);
+    transition: color 0.3s ease;
+}
+
+.footer__link-item:hover {
+    color: var(--ifm-footer-link-hover-color);
+    text-decoration: none;
+}
+
+.footer__copyright {
+    color: var(--ifm-footer-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Navbar improvements */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+html[data-theme='dark'] .navbar {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+/* Stronger selector for logo color in navbar */
+.navbar__brand,
+.navbar__brand .navbar__logo,
+.navbar__brand svg,
+.navbar__brand svg * {
+  color: #111 !important;
+  fill: #111 !important;
+  stroke: #111 !important;
+}
+
+html[data-theme='dark'] .navbar__brand,
+html[data-theme='dark'] .navbar__brand .navbar__logo,
+html[data-theme='dark'] .navbar__brand svg,
+html[data-theme='dark'] .navbar__brand svg * {
+  color: #fff !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+/* Hero section improvements */
+.hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero__title {
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero__subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* Button improvements */
+.button {
+    background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #ff7d4d 0%, #ff6b35 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.button--secondary {
+    background: transparent;
+    border: 2px solid #ff6b35;
+    color: #ff6b35 !important;
+    font-weight: 600;
+    box-shadow: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.button--secondary:hover,
+.button--secondary:focus {
+    background: rgba(255, 107, 53, 0.08);
+    color: #ff6b35 !important;
+    border-color: #ff7d4d;
+    text-decoration: none;
+}
+
+/* Feature section improvements */
+.features {
+    padding: 4rem 0;
+    background: var(--ifm-background-surface-color);
+}
+
+.featureSvg {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.featureSvg:hover {
+    transform: scale(1.1);
+}
+
+/* Scroll animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-on-scroll.animate-left {
+    animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-on-scroll.animate-right {
+    animation: fadeInRight 0.8s ease forwards;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 966px) {
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .featureSvg {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+    
+    .featureSvg {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+/* Search improvements */
+.searchBox {
+    border-radius: 8px;
+    border: 2px solid rgba(255, 107, 53, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.searchBox:focus {
+    border-color: #ff6b35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+/* Card improvements */
+.card {
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: var(--ifm-background-surface-color);
+}
+
+.card:hover {
+    border-color: rgba(255, 107, 53, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme='dark'] .card {
+    background: var(--ifm-background-surface-color);
+    border-color: rgba(255, 107, 53, 0.2);
+}
+
+html[data-theme='dark'] .card:hover {
+    border-color: rgba(255, 107, 53, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* GitHub icon in navbar */
+.navbar__github {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background: none !important;
+}
+.navbar__github::before {
+  content: '';
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
+  vertical-align: middle;
+  transition: filter 0.2s;
+  filter: brightness(0) invert(1);
+}
+html[data-theme='light'] .navbar__github::before {
+  filter: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="black" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
+}
+.navbar__github:hover::before {
+  filter: drop-shadow(0 0 2px #ff6b35);
+}
+
+.footer__github {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
+  transition: filter 0.2s;
+  filter: brightness(0) invert(1);
+  position: relative;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+html[data-theme='light'] .footer__github {
+  filter: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="black" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
+}
+.footer__github:hover {
+  filter: drop-shadow(0 0 2px #ff6b35);
 }
