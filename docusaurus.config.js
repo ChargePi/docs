@@ -152,20 +152,6 @@ module.exports = {
                 path: 'chargeflow',
                 routeBasePath: 'chargeflow',
             }
-        ],
-        [
-            'docusaurus-lunr-search',
-            {
-                indexBaseUrl: true,
-                indexDocPages: true,
-                indexBlog: true,
-                docsRouteBasePath: ['docs', 'hardware', 'services', 'chargeflow'],
-                searchBarPosition: 'right',
-                searchBarComponent: 'SearchBar',
-                searchBarComponentProps: {
-                    placeholder: 'Search documentation...',
-                },
-            }
         ]
     ]
 };
