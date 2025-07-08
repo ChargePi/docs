@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # 📝 Bill of materials
@@ -41,4 +41,4 @@ EV Charging controller and safety components.
 |:------------------------------------:|:---:|
 |           M2,5 20mm screws           |  4  |
 |        M2 or M2,5 6mm screws         |  2  |
-| __optionally__ 3D printed DIN mounts |  2  |
+| __optionally__ 3D printed DIN mounts |  2  | 

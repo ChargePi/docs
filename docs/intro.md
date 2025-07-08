@@ -24,19 +24,19 @@ ChargePi-go client can be deployed/run in multiple ways:
 
 ## ⚡ Quickstart
 
-1. Wire your hardware according to the provided [schematics](/docs/hardware/hardware.md).
+1. Wire your hardware according to the provided [hardware schematics](hardware.md).
 
-2. Install the [libraries](/docs/client/installing-libraries.md) (if needed).
+2. Install the [libraries](go-client/installing-libraries.md) (if needed).
 
 3. Configure the settings files according to the hardware and desired functionality:
-   - [client configuration](/docs/client/configuration.md)
-   - [OCPP configuration](/docs/ocpp/ocpp-16.md)
+   - [client configuration](go-client/configuration.md)
+   - [OCPP configuration](ocpp/ocpp-16.md)
 
 4. Run the client.
 
-Details on how to run the client are described in the [client startup guide](docs/client/running-the-client.md).
+Details on how to run the client are described in the [client startup guide](go-client/running-the-client.md).
 
 ### 🛠️ Configuration and settings
 
-To configure the ChargePi client, check out the [configuration guide](/docs/client/configuration.md). Client comes with
+To configure the ChargePi client, check out the [configuration guide](go-client/configuration.md). Client comes with
 default settings which require minimal configuration.

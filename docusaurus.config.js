@@ -24,34 +24,17 @@ module.exports = {
             },
             items: [
                 {
-                    type: 'dropdown',
-                    label: 'Documentation',
+                    type: 'doc',
+                    docId: 'intro',
+                    label: 'ChargePi',
                     position: 'left',
-                    items: [
-                        {
-                            type: 'doc',
-                            docId: 'intro',
-                            label: 'Client',
-                        },
-                        {
-                            type: 'doc',
-                            docId: 'hardware',
-                            label: 'Hardware',
-                            docsPluginId: 'docs-hardware',
-                        },
-                        {
-                            type: 'doc',
-                            docId: 'modem-setup',
-                            label: 'Services',
-                            docsPluginId: 'docs-services',
-                        },
-                        {
-                            type: 'doc',
-                            docId: 'intro',
-                            label: 'ChargeFlow CLI',
-                            docsPluginId: 'chargeflow-docs',
-                        },
-                    ],
+                },
+                {
+                    type: 'doc',
+                    docId: 'intro',
+                    label: 'ChargeFlow CLI',
+                    docsPluginId: 'chargeflow-docs',
+                    position: 'left',
                 },
                 {to: '/blog', label: 'Blog', position: 'left'},
                 {
@@ -69,19 +52,11 @@ module.exports = {
                     title: 'Documentation',
                     items: [
                         {
-                            label: 'Client',
+                            label: 'ChargePi',
                             to: '/docs/intro'
                         },
                         {
-                            label: 'Hardware',
-                            to: '/hardware/hardware'
-                        },
-                        {
-                            label: 'Services',
-                            to: '/services/modem-setup'
-                        },
-                        {
-                            label: 'Chargeflow CLI',
+                            label: 'ChargeFlow CLI',
                             to: '/chargeflow/intro'
                         }
                     ]
@@ -129,22 +104,6 @@ module.exports = {
             }
         ]
     ], plugins: [
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'docs-hardware',
-                path: 'docs-hardware',
-                routeBasePath: 'hardware',
-            },
-        ],
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'docs-services',
-                path: 'docs-services',
-                routeBasePath: 'services',
-            }
-        ],
         [
             '@docusaurus/plugin-content-docs',
             {

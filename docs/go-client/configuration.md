@@ -29,9 +29,9 @@ Example environment variable: `CHARGEPI_CHARGEPOINT_CONNECTIONSETTINGS_ID`.
 
 There are three **required** configuration files:
 
-1. [`settings`](../../configs/settings.json)
-2. [`configuration`](../../configs/configuration.json)
-3. [`evses`](../../configs/evses/connector-1.json)
+1. `settings.json` - Main configuration file
+2. `configuration.json` - Additional configuration settings
+3. `evses/connector-1.json` - EVSE configuration files
 
 The settings files are supported in `YAML`, `JSON` or `TOML` format.
 
