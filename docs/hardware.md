@@ -1,15 +1,14 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Supported hardware and schematics
 
-The hardware, such as Reader, Indicator and a Display must be configured in [_settings
-file_](../../configs/settings.json), and EVSEs should be configured in the [_evses folder_](../../configs/evses), each
+The hardware, such as Reader, Indicator and a Display must be configured in the settings file, and EVSEs should be configured in the evses folder, each
 in a separate file.
 
 If you want to add support for any type of hardware, read
-the [contribution guide](../contribution/adding-support-for-hardware.md).
+the [contribution guide](go-client/adding-support-for-hardware.md).
 
 ## RFID/NFC readers
 
@@ -133,4 +132,4 @@ provides the 5V for power instead of using an external power supply.
 
 ## Wiring diagram
 
-![](WiringSketch_eng.png)
+![](../static/img/WiringSketch_eng.png) 

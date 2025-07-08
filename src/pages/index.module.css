@@ -90,6 +90,11 @@
     }
 }
 
+.productsSection {
+    padding: 6rem 0;
+    background: var(--ifm-background-color);
+}
+
 .companySection {
     padding: 6rem 0;
     background: var(--ifm-background-surface-color);
@@ -122,8 +127,106 @@
         font-size: 1rem;
     }
     
-    .companySection {
+    .companySection,
+    .productsSection {
         padding: 4rem 0;
+    }
+}
+
+/* Product card styles */
+.card--product {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    background: var(--ifm-background-surface-color);
+}
+
+.card--product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card--product .card__header {
+    background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-darker) 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.card--product .card__header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card--product .card__subtitle {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.card--product .card__body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card--product .card__body p {
+    margin-bottom: 1.5rem;
+    color: var(--ifm-color-emphasis-700);
+    line-height: 1.6;
+}
+
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    flex: 1;
+}
+
+.product-features li {
+    padding: 0.5rem 0;
+    color: var(--ifm-color-emphasis-600);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.product-features li:before {
+    content: "✓";
+    color: var(--ifm-color-primary);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.product-actions {
+    margin-top: auto;
+    text-align: center;
+}
+
+.product-actions .button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.product-actions .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .card--product {
+        margin-bottom: 2rem;
+    }
+    
+    .product-features li {
+        font-size: 0.9rem;
     }
 }
 
