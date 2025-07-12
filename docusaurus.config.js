@@ -15,6 +15,9 @@ module.exports = {
     favicon: 'img/favicon.ico',
     organizationName: 'ChargePi',
     projectName: 'ChargePi',
+    customFields: {
+        supportEmail: process.env.SUPPORT_EMAIL,
+    },
     themeConfig: {
         navbar: {
             title: ' ',
@@ -46,37 +49,7 @@ module.exports = {
             ]
         },
         footer: {
-            //style: 'dark',
-            links: [
-                {
-                    title: 'Documentation',
-                    items: [
-                        {
-                            label: 'ChargePi',
-                            to: '/docs/intro'
-                        },
-                        {
-                            label: 'ChargeFlow CLI',
-                            to: '/chargeflow/intro'
-                        }
-                    ]
-                },
-                {
-                    title: 'More',
-                    items: [
-                        {
-                            label: 'Blog',
-                            to: '/blog'
-                        },
-                        {
-                            label: ' ',
-                            href: 'https://github.com/ChargePi',
-                            className: 'footer__github',
-                            'aria-label': 'GitHub'
-                        }
-                    ]
-                }
-            ],
+            style: 'dark',
             copyright: `Copyright © 2022-${new Date().getFullYear()} ChargePi.`
         },
         prism: {
