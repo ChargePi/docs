@@ -2,6 +2,21 @@
 
 This is a ChargePi website and documentation hosting project. It is built using [Docusaurus 2](https://docusaurus.io/).
 
+## Configuration
+
+### Environment Variables
+
+The website supports the following environment variables:
+
+- `SUPPORT_EMAIL`: Set this to enable the protected email feature in the footer. If not set, the email section will not be displayed.
+- `DOCUSAURUS_BASE_URL`: The base URL for the Docusaurus site (optional, defaults to `http://localhost:3000`).
+
+Copy `env.example` to `.env` and configure the variables as needed:
+
+```console
+cp env.example .env
+```
+
 ## Local Development
 
 ```console

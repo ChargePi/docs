@@ -55,30 +55,224 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 /* Footer improvements */
 .footer {
-    background-color: var(--ifm-footer-background-color);
+    background: linear-gradient(135deg, var(--ifm-footer-background-color) 0%, rgba(0, 0, 0, 0.05) 100%);
     color: var(--ifm-footer-color);
-    padding: 2rem 0;
-    border-top: 1px solid rgba(255, 107, 53, 0.2);
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+}
+
+html[data-theme='dark'] .footer {
+    background: linear-gradient(135deg, var(--ifm-footer-background-color) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 .footer__links {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer__col {
+    margin-bottom: 2rem;
+}
+
+.footer__col .footer__title {
+    color: var(--ifm-footer-color);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer__col .footer__title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%; /* Extend underline to full text width */
+    height: 2px;
+    background: linear-gradient(90deg, #ff6b35 0%, #ff7d4d 100%);
+    border-radius: 1px;
+}
+
+.footer__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__item {
+    margin-bottom: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.footer__item:hover {
+    transform: translateX(4px);
 }
 
 .footer__link-item {
     color: var(--ifm-footer-link-color);
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    padding: 0.25rem 0;
 }
 
 .footer__link-item:hover {
     color: var(--ifm-footer-link-hover-color);
     text-decoration: none;
+    transform: translateX(4px);
+}
+
+.footer__link-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--ifm-footer-link-hover-color);
+    transition: width 0.3s ease;
+}
+
+.footer__link-item:hover::before {
+    width: 100%;
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba(255, 107, 53, 0.1);
+    padding-top: 2rem;
+    margin-top: 2rem;
 }
 
 .footer__copyright {
     color: var(--ifm-footer-color);
-    opacity: 0.8;
+    opacity: 0.7;
     font-size: 0.9rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Modern GitHub icon styling */
+.footer__github {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    height: 2rem;
+    background: rgba(255, 107, 53, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 0 0.75rem 0 0.5rem;
+    font-weight: 500;
+    color: var(--ifm-footer-link-color);
+    text-decoration: none;
+}
+
+.footer__github::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+    background: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
+    transition: all 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+html[data-theme='light'] .footer__github::before {
+    filter: none;
+    background: url('data:image/svg+xml;utf8,<svg fill="black" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
+}
+
+html[data-theme='light'] .footer__github {
+    background: rgba(255, 107, 53, 0.08);
+}
+
+html[data-theme='light'] .footer__github::before {
+    filter: none;
+    background: url('data:image/svg+xml;utf8,<svg fill="black" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
+}
+
+.footer__github:hover {
+    background: rgba(255, 107, 53, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.footer__github:hover::before {
+    filter: drop-shadow(0 0 2px #ff6b35);
+}
+
+/* Enhanced protected email styles */
+.footer__email-protected {
+    color: var(--ifm-footer-link-color);
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 107, 53, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    font-weight: 500;
+    /* Prevent text selection and copying */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Prevent context menu */
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.footer__email-protected:hover {
+    color: var(--ifm-footer-link-hover-color);
+    background: rgba(255, 107, 53, 0.12);
+    border-color: rgba(255, 107, 53, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.15);
+}
+
+.footer__email-protected::before {
+    content: '📧';
+    margin-right: 0.5rem;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Responsive footer improvements */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer__col {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer__col .footer__title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer__item {
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer__email-protected {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Navbar improvements */
@@ -338,25 +532,5 @@ html[data-theme='light'] .navbar__github::before {
   background: url('data:image/svg+xml;utf8,<svg fill="black" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
 }
 .navbar__github:hover::before {
-  filter: drop-shadow(0 0 2px #ff6b35);
-}
-
-.footer__github {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  background: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
-  transition: filter 0.2s;
-  filter: brightness(0) invert(1);
-  position: relative;
-  text-indent: -9999px;
-  overflow: hidden;
-}
-html[data-theme='light'] .footer__github {
-  filter: none;
-  background: url('data:image/svg+xml;utf8,<svg fill="black" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.11 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>') center/contain no-repeat;
-}
-.footer__github:hover {
   filter: drop-shadow(0 0 2px #ff6b35);
 }
