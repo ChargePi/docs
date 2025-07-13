@@ -21,6 +21,7 @@ jobs:
       id-token: write # to verify the deployment originates from an appropriate source
     env:
       DOCUSAURUS_BASE_URL: https://chargepi.cc/
+      SUPPORT_EMAIL: ${{ environment.SUPPORT_EMAIL }}
 
     steps:
       - uses: actions/checkout@v4
