@@ -8,6 +8,7 @@ on:
     types: [ opened, synchronize, reopened ]
     branches:
       - master
+  workflow_dispatch:
 
 concurrency: preview-${{ github.ref }}
 
@@ -21,7 +22,7 @@ jobs:
       id-token: write # to verify the deployment originates from an appropriate source
     env:
       DOCUSAURUS_BASE_URL: https://chargepi.cc/
-      SUPPORT_EMAIL: ${{ env.SUPPORT_EMAIL }}
+      SUPPORT_EMAIL: ${{ vars.SUPPORT_EMAIL }}
 
     steps:
       - uses: actions/checkout@v4
