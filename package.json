@@ -61,7 +61,7 @@
     "globals": "^16.2.0",
     "jest": "^30.0.4",
     "typescript": "^5.4.5",
-    "typescript-eslint": "^8.32.1"
+    "typescript-eslint": "^8.38.0"
   },
   "engines": {
     "node": ">=18.0"
