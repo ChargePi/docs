@@ -25,7 +25,7 @@ jobs:
       SUPPORT_EMAIL: ${{ vars.SUPPORT_EMAIL }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -86,7 +86,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - uses: actions/setup-node@v4
         with:
