@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkchargepi=self.webpackChunkchargepi||[]).push([[121],{8070:e=>{e.exports=JSON.parse('{"tags":[{"label":"charge-pi","permalink":"/blog/tags/charge-pi","count":1},{"label":"hello","permalink":"/blog/tags/hello","count":1}]}')}}]);
