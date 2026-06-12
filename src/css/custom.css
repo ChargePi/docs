@@ -509,6 +509,154 @@ html[data-theme='dark'] .card:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Equal-height cards per section */
+.company-section .col--4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-section .card {
+    height: 100%;
+}
+
+/* Product card header — distinct inner box */
+.card--product .card__header {
+    background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-darkest) 100%);
+    color: white;
+    padding: 1.25rem 1.5rem;
+    border-radius: 11px 11px 0 0;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+}
+
+.card--product .card__header h3,
+.card--product .card__header .card__subtitle {
+    color: white;
+    margin: 0;
+}
+
+.card--product .card__header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.card--product .card__header .card__subtitle {
+    font-size: 0.875rem;
+    opacity: 0.88;
+}
+
+/* Product card inner sections */
+.product-section {
+    padding: 0.85rem 0;
+    border-top: 1px solid rgba(255, 107, 53, 0.12);
+}
+
+.product-section:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.product-section__title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ifm-color-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.product-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Tech detail tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 0.18rem 0.55rem;
+    background: rgba(255, 107, 53, 0.07);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: var(--ifm-font-family-monospace);
+    color: var(--ifm-color-emphasis-800);
+}
+
+html[data-theme='dark'] .tech-tag {
+    background: rgba(255, 107, 53, 0.1);
+    border-color: rgba(255, 107, 53, 0.3);
+    color: var(--ifm-color-emphasis-700);
+}
+
+/* Product cards — equal height with bottom-aligned actions */
+.products-section .col--6 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card--product {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card--product .card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card--product .product-actions {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Icon-only GitHub button */
+.button--github {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    background: transparent;
+    border: 2px solid #ff6b35;
+    border-radius: 8px;
+    color: #ff6b35;
+    box-shadow: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.button--github:hover {
+    background: rgba(255, 107, 53, 0.1);
+    border-color: #ff7d4d;
+    color: #ff7d4d;
+    transform: translateY(-2px);
+    box-shadow: none;
+    text-decoration: none;
+}
+
+html[data-theme='dark'] .button--github {
+    color: #ff6b35;
+    border-color: #ff6b35;
+}
+
+html[data-theme='dark'] .button--github:hover {
+    background: rgba(255, 107, 53, 0.15);
+    color: #ff7d4d;
+    border-color: #ff7d4d;
+}
+
 /* GitHub icon in navbar */
 .navbar__github {
   display: flex;
