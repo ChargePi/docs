@@ -34,7 +34,7 @@ jobs:
           node-version: latest
           # cache: yarn
 
-      - uses: pnpm/action-setup@v5
+      - uses: pnpm/action-setup@v6
         with:
           version: 10.11.0
 
@@ -93,7 +93,7 @@ jobs:
           node-version: latest
           # cache: yarn
 
-      - uses: pnpm/action-setup@v5
+      - uses: pnpm/action-setup@v6
         with:
           version: 10.11.0
 
