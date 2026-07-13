@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://localhost:3000/blog</id>
+    <title>ChargePi Blog</title>
+    <updated>2021-08-12T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://localhost:3000/blog"/>
+    <subtitle>ChargePi Blog</subtitle>
+    <icon>http://localhost:3000/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>http://localhost:3000/blog/welcome</id>
+        <link href="http://localhost:3000/blog/welcome"/>
+        <updated>2021-08-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to ChargePi website!]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to ChargePi website!</p>
+<p>Thank you for checking out the project. The project is still <strong>under development</strong>, but you're welcome to contribute to
+it!</p>
+<p>The main goal of the project is to create a simple, open source Charging Station for home use. We want the project to be
+modular and configurable, so everyone can modify it to their needs!</p>
+<p>The support for hardware is limited, but you can change that! Integrate some new hardware to the program.</p>]]></content>
+        <author>
+            <name>xBlaz3kx</name>
+            <uri>https://github.com/xBlaz3kx</uri>
+        </author>
+        <category label="charge-pi" term="charge-pi"/>
+        <category label="hello" term="hello"/>
+    </entry>
+</feed>
