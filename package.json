@@ -60,7 +60,7 @@
     "eslint-plugin-react": "^7.34.1",
     "globals": "^17.7.0",
     "jest": "^30.0.4",
-    "typescript": "^5.4.5",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.46.0"
   },
   "engines": {
