@@ -594,7 +594,7 @@ html[data-theme='dark'] .tech-tag {
 }
 
 /* Product cards — equal height with bottom-aligned actions */
-.products-section .col--6 {
+.products-section .col--4 {
     display: flex;
     flex-direction: column;
 }

@@ -147,7 +147,7 @@ function ProductsSection() {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col col--6 animate-on-scroll">
+                    <div className="col col--4 animate-on-scroll">
                         <div className="card card--product">
                             <div className="card__header">
                                 <h3>🔌 ChargePi</h3>
@@ -187,7 +187,7 @@ function ProductsSection() {
                             </div>
                         </div>
                     </div>
-                    <div className="col col--6 animate-on-scroll">
+                    <div className="col col--4 animate-on-scroll">
                         <div className="card card--product">
                             <div className="card__header">
                                 <h3>⚙️ ChargeFlow CLI</h3>
@@ -227,9 +227,77 @@ function ProductsSection() {
                             </div>
                         </div>
                     </div>
+                    <div className="col col--4 animate-on-scroll">
+                        <div className="card card--product">
+                            <div className="card__header">
+                                <h3>📋 ChargeFlow Registry <span className="badge badge--warning" style={{fontSize: '0.65rem', verticalAlign: 'middle'}}>Coming Soon</span></h3>
+                                <p className="card__subtitle">OCPP schema compatibility registry for charge points and CSMS backends</p>
+                            </div>
+                            <div className="card__body">
+                                <div className="product-section">
+                                    <p>Check OCPP schema compatibility with any charge point vendor, model, or CSMS backend from a single unified registry — no more manual cross-referencing.</p>
+                                </div>
+                                <div className="product-section">
+                                    <p className="product-section__title">Key Features</p>
+                                    <ul className="product-features">
+                                        <li>Vendor & model compatibility lookup</li>
+                                        <li>OCPP schema validation</li>
+                                        <li>CSMS backend compatibility checks</li>
+                                        <li>Docker support</li>
+                                    </ul>
+                                </div>
+                                <div className="product-section">
+                                    <p className="product-section__title">Technical Details</p>
+                                    <div className="tech-tags">
+                                        <span className="tech-tag">Go</span>
+                                        <span className="tech-tag">OCPP</span>
+                                        <span className="tech-tag">Protobuf</span>
+                                        <span className="tech-tag">Docker</span>
+                                        <span className="tech-tag">MIT</span>
+                                    </div>
+                                </div>
+                                <div className="product-actions">
+                                    <Link className="button button--github" href="https://github.com/ChargePi/chargeflow-registry" aria-label="View on GitHub"><GitHubIcon/></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="row" style={{marginTop: '2rem'}}>
-                    <div className="col col--6 animate-on-scroll">
+                    <div className="col col--4 animate-on-scroll">
+                        <div className="card card--product">
+                            <div className="card__header">
+                                <h3>📄 OECS</h3>
+                                <p className="card__subtitle">Open EV charger specification</p>
+                            </div>
+                            <div className="card__body">
+                                <div className="product-section">
+                                    <p>The Open EV Charger Specification defines a JSON Schema-based standard for documenting charger hardware, software, payment methods, and compliance — a machine-readable counterpart to a manufacturer's datasheet.</p>
+                                </div>
+                                <div className="product-section">
+                                    <p className="product-section__title">Key Features</p>
+                                    <ul className="product-features">
+                                        <li>Standardize any EV specification</li>
+                                        <li>Covers software, hardware and compliance</li>
+                                        <li>Includes links to certifications and claims</li>
+                                        <li>Example specs for AC wallboxes & DC fast chargers</li>
+                                    </ul>
+                                </div>
+                                <div className="product-section">
+                                    <p className="product-section__title">Technical Details</p>
+                                    <div className="tech-tags">
+                                        <span className="tech-tag">JSON Schema</span>
+                                        <span className="tech-tag">Go</span>
+                                        <span className="tech-tag">MIT</span>
+                                    </div>
+                                </div>
+                                <div className="product-actions">
+                                    <Link className="button button--github" href="https://github.com/ChargePi/oecs" aria-label="View on GitHub"><GitHubIcon/></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col col--4 animate-on-scroll">
                         <div className="card card--product">
                             <div className="card__header">
                                 <h3>🤖 OpenEV Data MCP</h3>
@@ -262,41 +330,6 @@ function ProductsSection() {
                                 </div>
                                 <div className="product-actions">
                                     <Link className="button button--github" href="https://github.com/ChargePi/openev-data-mcp" aria-label="View on GitHub"><GitHubIcon/></Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col col--6 animate-on-scroll">
-                        <div className="card card--product">
-                            <div className="card__header">
-                                <h3>📋 ChargeFlow Registry <span className="badge badge--warning" style={{fontSize: '0.65rem', verticalAlign: 'middle'}}>Coming Soon</span></h3>
-                                <p className="card__subtitle">OCPP schema compatibility registry for charge points and CSMS backends</p>
-                            </div>
-                            <div className="card__body">
-                                <div className="product-section">
-                                    <p>Check OCPP schema compatibility with any charge point vendor, model, or CSMS backend from a single unified registry — no more manual cross-referencing.</p>
-                                </div>
-                                <div className="product-section">
-                                    <p className="product-section__title">Key Features</p>
-                                    <ul className="product-features">
-                                        <li>Vendor & model compatibility lookup</li>
-                                        <li>OCPP schema validation</li>
-                                        <li>CSMS backend compatibility checks</li>
-                                        <li>Docker support</li>
-                                    </ul>
-                                </div>
-                                <div className="product-section">
-                                    <p className="product-section__title">Technical Details</p>
-                                    <div className="tech-tags">
-                                        <span className="tech-tag">Go</span>
-                                        <span className="tech-tag">OCPP</span>
-                                        <span className="tech-tag">Protobuf</span>
-                                        <span className="tech-tag">Docker</span>
-                                        <span className="tech-tag">MIT</span>
-                                    </div>
-                                </div>
-                                <div className="product-actions">
-                                    <Link className="button button--github" href="https://github.com/ChargePi/chargeflow-registry" aria-label="View on GitHub"><GitHubIcon/></Link>
                                 </div>
                             </div>
                         </div>
